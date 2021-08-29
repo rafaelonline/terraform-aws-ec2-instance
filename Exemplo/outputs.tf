@@ -1,14 +1,14 @@
 output instance_id {
+  value       = [module.ec2.instance_id]
   description = "Lista o ID da instancia"
-  value       = join("", aws_instance.default.*.id)
 }
 
 output private_ip {
+  value       = [module.ec2.instace_private_ip]
   description = "Lista o IP Privado da instancia"
-  value       = join("", aws_instance.default.*.private_ip)
 }
 
 output public_ip {
+  value       = [module.ec2.instace_public_ip]
   description = "Lista o IP Publico da instancia"
-  value       = join("", aws_instance.default.*.public_ip)
 }
